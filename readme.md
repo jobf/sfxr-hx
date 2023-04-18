@@ -55,7 +55,7 @@ Flash as3 implementation
 
 https://github.com/SFBTom/as3sfxr
 
-### 2016 Fernando Serboncini - Haxe sfxr
+### 2014 Fernando Serboncini - Haxe sfxr
 
 Haxe/OpenFL implementation
 
