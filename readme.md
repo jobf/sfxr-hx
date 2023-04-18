@@ -38,7 +38,7 @@ haxe make_waves.hxml
 
 ### 2007 Tomas Pettersson - sfxr
 
-Original C++ implementation
+Original C++ implementation - see http://www.drpetter.se/project_sfxr.html
 
 https://github.com/grimfang4/sfxr
 
