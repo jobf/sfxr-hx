@@ -1,4 +1,5 @@
 import haxe.io.Bytes;
+
 import Sfxr;
 
 class GenerateWaveFiles {
@@ -10,19 +11,13 @@ class GenerateWaveFiles {
 			write_to_disk(name, wave_data);
 		}
 
-		var make_preset:(configure:Parameters->Void) -> Parameters = configure -> {
-			var preset:Parameters = {};
-			configure(preset);
-			return preset;
-		}
-
-		write_wave("blip_select", make_preset(params -> Configure.blip_select(params)));
-		write_wave("explosion", make_preset(params -> Configure.explosion(params)));
-		write_wave("hit_hurt", make_preset(params -> Configure.hit_hurt(params)));
-		write_wave("jump", make_preset(params -> Configure.jump(params)));
-		write_wave("laser_shoot", make_preset(params -> Configure.laser_shoot(params)));
-		write_wave("pickup_coin", make_preset(params -> Configure.pickup_coin(params)));
-		write_wave("power_up", make_preset(params -> Configure.power_up(params)));
+		write_wave("blip_select", Configure.blip_select());
+		write_wave("explosion", Configure.explosion());
+		write_wave("hit_hurt", Configure.hit_hurt());
+		write_wave("jump", Configure.jump());
+		write_wave("laser_shoot", Configure.laser_shoot());
+		write_wave("pickup_coin", Configure.pickup_coin());
+		write_wave("power_up", Configure.power_up());
 	}
 
 	static function write_to_disk(file_name:String, data:Bytes) {
