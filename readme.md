@@ -17,10 +17,10 @@ import Sfxr;
 
 function generate_wave_data():Void
 {
-	var:preset:Parameters = {};
-	Configure.explosion(preset);
-
 	var synth:Synth = new Synth();
+
+	var preset = Configure.explosion();
+	
 	var wave_data:Bytes = synth.generate(preset);
 }
 ```
