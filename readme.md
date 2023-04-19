@@ -38,7 +38,7 @@ haxe make_waves.hxml
 
 ### 2007 Tomas Pettersson - sfxr
 
-Original C++ implementation
+Original C++ implementation - see http://www.drpetter.se/project_sfxr.html
 
 https://github.com/grimfang4/sfxr
 
@@ -55,7 +55,7 @@ Flash as3 implementation
 
 https://github.com/SFBTom/as3sfxr
 
-### 2016 Fernando Serboncini - Haxe sfxr
+### 2014 Fernando Serboncini - Haxe sfxr
 
 Haxe/OpenFL implementation
 
