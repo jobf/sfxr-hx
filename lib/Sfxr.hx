@@ -393,8 +393,8 @@ class Synth {
 
 			samples.push(super_sample);
 
-			var val:Int = Std.int(32767.0 * super_sample);
-			data.write_short(val);
+			
+			data.write_sample(super_sample);
 		}
 	}
 }
@@ -762,7 +762,8 @@ class WaveData {
 		write_head = 0;
 	}
 
-	public function write_short(value:Int):Void {
+	public function write_sample(sample:Float):Void {
+		var value:Int = Std.int(32767.0 * sample);
 		bytes.set(write_head++, value);
 		bytes.set(write_head++, value >> 8);
 		if (write_head > bytes.length) {
