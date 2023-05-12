@@ -465,7 +465,7 @@ class Configure {
 			decay_time: random() * 0.4
 		}
 		preset.min_frequency = preset.start_frequency - 0.2 - random() * 0.6;
-		
+
 		if (preset.wave_type == 2 && random() < 0.5)
 			preset.wave_type = Std.int(random() * 2);
 		if (preset.min_frequency < 0.2)
@@ -497,12 +497,12 @@ class Configure {
 
 	public static function explosion():Parameters {
 		var preset:Parameters = {
-			wave_type:3,
-			sustain_time:0.1 + random() * 0.3,
-			decay_time:random() * 0.5,
-			sustain_punch:0.2 + random() * 0.6,
+			wave_type: 3,
+			sustain_time: 0.1 + random() * 0.3,
+			decay_time: random() * 0.5,
+			sustain_punch: 0.2 + random() * 0.6,
 		}
-		
+
 		if (random() < 0.5) {
 			preset.start_frequency = 0.1 + random() * 0.4;
 			preset.slide = -0.1 + random() * 0.4;
@@ -749,6 +749,39 @@ class Configure {
 			hp_filter_cutoff_sweep: float(values[22]),
 			master_volume: float(values[23]),
 		}
+	}
+
+	public static function to_string(preset:Parameters):String {
+		var values = [
+			// preset.wave_type,
+			preset.attack_time,
+			preset.sustain_time,
+			preset.sustain_punch,
+			preset.decay_time,
+			preset.start_frequency,
+			preset.min_frequency,
+			preset.slide,
+			preset.delta_slide,
+			preset.vibrato_depth,
+			preset.vibrato_speed,
+			preset.change_amount,
+			preset.change_speed,
+			preset.square_duty,
+			preset.duty_sweep,
+			preset.repeat_speed,
+			preset.phaser_offset,
+			preset.phaser_sweep,
+			preset.lp_filter_cutoff,
+			preset.lp_filter_cutoff_sweep,
+			preset.lp_filter_resonance,
+			preset.hp_filter_cutoff,
+			preset.hp_filter_cutoff_sweep,
+			preset.master_volume,
+		];
+
+		var strings = [preset.wave_type + ""];
+		var strings = strings.concat(values.map(f -> f + "" == "0" ? "" :  f + ""));
+		return strings.join(",");
 	}
 }
 

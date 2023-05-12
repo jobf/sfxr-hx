@@ -1,0 +1,7 @@
+--class-path ../lib
+--class-path unit
+--library utest
+--main RunTests
+
+--interp
+# --hl bin/runtests.hl
